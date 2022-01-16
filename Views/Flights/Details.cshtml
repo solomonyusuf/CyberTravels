@@ -1,0 +1,73 @@
+﻿@model CyberTravels.Models.Flight
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Flight</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Roundtrip)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Roundtrip)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Onway)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Onway)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.From)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.From)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Depatures)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Depatures)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Return)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Return)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Adults)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Adults)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Childs)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Childs)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.To)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.To)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Class)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Class)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

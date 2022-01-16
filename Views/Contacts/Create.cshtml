@@ -1,0 +1,72 @@
+﻿@model CyberTravels.Models.Contact
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Contact us <small>We'd Love to Hear From You!</small></h1>
+                <ol class="breadcrumb">
+                    <li><a asp-action="index" asp-controller="Home">Home</a></li>
+                    <li class="active">Contact</li>
+                </ol>
+            </div>
+            <div class="col-lg-12">
+                <!-- Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it! -->
+                <iframe width="100%" scrolling="no" height="400px" frameborder="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed" marginwidth="0" marginheight="0"></iframe>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-sm-8">
+                    <br />
+                    <h3 align="center">  Let's Get In Touch!</h3>
+                    <hr />
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form asp-action="Create">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group col-lg-8">
+                                    <label asp-for="Fullname" class="control-label">Full Name</label>
+                                    <input asp-for="Fullname"placeholder="Enter your Full name" class="form-control" />
+                                    <span asp-validation-for="Fullname" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-lg-8">
+                                    <label asp-for="phoneNumber" class="control-label">Phone Number</label>
+                                    <input asp-for="phoneNumber" placeholder="Enter your phone number" class="form-control" />
+                                    <span asp-validation-for="phoneNumber" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-lg-8">
+                                    <label asp-for="Email" class="control-label"></label>
+                                    <input asp-for="Email" placeholder="Enter your Email" class="form-control" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-lg-8">
+                                    <label asp-for="Message" class="control-label">Message</label>
+                                    <input id="dd" asp-for="Message"placeholder="Enter your message" class="form-control scroller" />
+                                    <span asp-validation-for="Message" class="text-danger"></span>
+                                </div>
+                                <style>
+                                    #dd {
+                                        height: 70px;
+                                    }
+                                </style>
+                                <div class="form-group col-lg-8">
+                                    <input type="submit" value="Submit" class="book-btn" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>   
+
+            @section Scripts {
+                @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+            }

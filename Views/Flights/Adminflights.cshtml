@@ -1,0 +1,104 @@
+﻿@model IEnumerable<CyberTravels.Models.Flight>
+
+@{
+    ViewData["Title"] = "Adminflights";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+            #new {
+                color: rgb(77, 73, 73);
+            }</style>
+<div class="container">
+    <div class="logo">
+        <a id="new" asp-controller="Home" asp-action="Index">
+            Cyber<span>Travels</span>
+        </a>
+        <b>
+            <p>
+                Your travel agency
+            </p>
+        </b>
+       
+    </div>
+
+
+    
+</div>
+
+<h2>All Flight Bookings</h2>
+<p><br />
+    <a class="book-btn" asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Roundtrip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Onway)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.From)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Depatures)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Return)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adults)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Childs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.To)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Roundtrip)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Onway)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.From)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Depatures)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Return)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adults)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Childs)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.To)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Class)
+                </td>
+                <td>
+                    <a  asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a  asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a  asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
