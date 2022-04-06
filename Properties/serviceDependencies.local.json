@@ -4,10 +4,9 @@
       "type": "secrets.user"
     },
     "mssql1": {
-      "resourceId": null,
+      "secretStore": "LocalSecretsFile",
       "type": "mssql.local",
-      "connectionId": "DefaultConnection",
-      "secretStore": "LocalSecretsFile"
+      "connectionId": "ConnectionStrings:DefaultConnection"
     }
   }
 }
